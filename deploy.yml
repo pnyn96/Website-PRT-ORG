@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yashudeployment
+  labels:
+    app: env
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      yashu: pillu
+  template:
+    metadata:
+      labels:
+        yashu: pillu
+    spec:
+      containers:
+      - name: yashucontainer
+        image: yashu7862/billu
+        ports:
+        - containerPort: 80
